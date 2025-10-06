@@ -1,10 +1,13 @@
 # Campaign Task Manager API - Debugging & Development Challenge
 
 ## Your Mission
-This partially built Rails API acts as the server for the front end task repo (https://github.com/Ibex-CRM/goat-tech-code-test-fe). You need to:
+
+We are Goat Agency, the worlds best Influencer Marketing Agency and we need a task manager for our campaign delivery teams. 
+
+This partially built Rails API acts as the server for the front end task repo (https://github.com/Ibex-CRM/goat-tech-code-test-fe) and to complete it, you need to:
 1. **Fix bugs** in the existing Campaign functionality (9 bugs total)
 2. **Build the Task model** from scratch (model, controller, routes, migrations)
-3. **FRONT END** complete the front end repo (https://github.com/Ibex-CRM/goat-tech-code-test-fe)
+3. **FRONT END**: complete the front end repo (https://github.com/Ibex-CRM/goat-tech-code-test-fe)
 4. **BONUS**: Add user relationships to tasks (created_by and assigned_to)
 
 ## Setup Instructions
@@ -162,14 +165,15 @@ bundle exec rspec spec/requests/api/v1/tasks_spec.rb
 
 ## Scoring Rubric
 
-| Category | Points | Description                                       |
-|----------|--------|---------------------------------------------------|
-| Campaign bugs fixed | 40 | All 9 bugs resolved, tests passing                |
-| Task model built | 40 | Complete model, controller, routes, tests passing |
-| Code quality | 20 | Clean code, proper conventions, tests passing     |
-| **Subtotal** | **100** | **Passing grade**                                 |
-| **BONUS** User relationships | +20 |                                |
-| **Maximum** | **120** | **Exceeds expectations**                          |
+| Category                     | Points  | Description                                       |
+|------------------------------|---------|---------------------------------------------------|
+| Campaign bugs fixed          | 40      | All 9 bugs resolved, tests passing                |
+| Task model built             | 40      | Complete model, controller, routes, tests passing |
+| Code quality                 | 20      | Clean code, proper conventions, tests passing     |
+| Front End Completed          | 80      | Complete the front end application
+| **Subtotal**                 | **180** | **Passing grade**                                 |
+| **BONUS** User relationships | +20     |                                |
+| **Maximum**                  | **200** | **Exceeds expectations**                          |
 
 ---
 
