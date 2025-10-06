@@ -1,10 +1,11 @@
 # Campaign Task Manager API - Debugging & Development Challenge
 
 ## Your Mission
-This Rails API is partially built. You need to:
+This partially built Rails API acts as the server for the front end task repo (https://github.com/Ibex-CRM/goat-tech-code-test-fe). You need to:
 1. **Fix bugs** in the existing Campaign functionality (9 bugs total)
 2. **Build the Task model** from scratch (model, controller, routes, migrations)
-3. **BONUS**: Add user relationships to tasks (created_by and assigned_to)
+3. **FRONT END** complete the front end repo (https://github.com/Ibex-CRM/goat-tech-code-test-fe)
+4. **BONUS**: Add user relationships to tasks (created_by and assigned_to)
 
 ## Setup Instructions
 ```bash
@@ -41,7 +42,7 @@ bundle exec rspec
 
 ## Phase 1: Fix Campaign Bugs (40 points)
 
-There are **9 intentional bugs** in the Campaign implementation. Find and fix them all!
+There are **9 intentional bugs** in the Campaign implementation. Find (search "Bug") and fix them all!
 
 ### Expected Campaign Functionality
 
@@ -153,9 +154,9 @@ bundle exec rspec spec/requests/api/v1/tasks_spec.rb
 
 ## Time Estimate
 - **Phase 1** (Fix bugs): 1-1.5 hours
-- **Phase 2** (Build Task): 1.5-2 hours
+- **Phase 2** (Build Task): 0.5-1.0 hours
 - **Phase 3** (Bonus): 30-45 minutes
-- **Total: 3-4 hours** (without bonus: 2.5-3 hours)
+- **Total: 2-3 hours** (without bonus: 1.5-2.5 hours)
 
 ---
 
