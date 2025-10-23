@@ -7,8 +7,10 @@ Rails.application.routes.draw do
 
   # BUG 4:
   namespace :api do
-    resources :campaigns
-    resources :users
+    namespace :v1 do
+      resources :campaigns
+      resources :users
+    end
   end
 
 end

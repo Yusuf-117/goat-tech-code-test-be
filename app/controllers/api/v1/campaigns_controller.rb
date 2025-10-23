@@ -4,20 +4,21 @@ module Api
       before_action :set_campaign, only: [:show, :update, :destroy]
 
       def index
-        # BUG 8:
+        # BUG 8: - use where. not find_by (returns 1 record)
         campaigns = if params[:status]
-                      Campaign.find_by(status: params[:status])
-                    else
-                      Campaign.all
-                    end
-
-        # BUG 7:
+          Campaign.where(status: params[:status])
+        else
+          Campaign.all
+        end
+        
+        # BUG 7: (didn't include tasks and task_count)
+        campaigns = campaigns.includes(:tasks).map { |c| c.as_json.merge(task_count: c.tasks.count) }
         render json: { campaigns: campaigns }
       end
 
       def show
-        # BUG 6:
-        render json: { campaign: @campaign }
+        # BUG 6: - wrap in a camapign:{} so we have access to res['campaign']['xyz']
+        render json: { campaign: @campaign.as_json(include: :tasks) }
       end
 
       def create
@@ -52,8 +53,8 @@ module Api
       end
 
       def campaign_params
-        # BUG 5:
-        params.require(:campaign).permit(:name, :description)
+        # BUG 5: - allow status filter in req
+        params.require(:campaign).permit(:name, :description, :status)
       end
     end
   end
