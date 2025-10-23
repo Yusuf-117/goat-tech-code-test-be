@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   # BUG 4:
   namespace :api do
     namespace :v1 do
-      resources :campaigns
+      resources :campaigns do
+        resources :tasks, only: [:index, :create]
+      end
+      resources :tasks, only: [:show, :update, :destroy]
       resources :users
     end
   end
