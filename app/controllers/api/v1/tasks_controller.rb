@@ -9,21 +9,19 @@ module Api
         builder = @campaign.tasks
         builder = builder.where(status: params[:status]) if params[:status]
         builder = builder.where(priority: params[:priority]) if params[:priority]
-
-        tasks = builder
         
-        render json: { tasks: tasks }
+        render json: { tasks: builder.as_json(include: [:created_by, :assigned_to]) }
       end
 
       def show
-        render json: { task: @task }
+        render json: { task: @task.as_json(include: [:created_by, :assigned_to]) }
       end
 
       def create
         task = @campaign.tasks.new(task_params)
 
         if task.save
-          render json: { task: task }, status: :created
+          render json: { task: task.as_json(include: [:created_by, :assigned_to]) }, status: :created
         else
           render json: { errors: task.errors }, status: :unprocessable_entity
         end
@@ -31,7 +29,7 @@ module Api
 
       def update
         if @task.update(task_params)
-          render json: { task: @task }
+          render json: { task: @task.as_json(include: [:created_by, :assigned_to]) }
         else
           render json: { errors: @task.errors }, status: :unprocessable_entity
         end
